@@ -24,6 +24,6 @@ Here are steps to install this workload onto your lpar:
 *.SGLWDATA.GLWLD5K.GLWTEPA.TRS
 
 
-4. Get the latest support datasets in SGLWEXEC and SGLWSAMP and replace the deprecicated version with these new ones.
+4. Get the latest support datasets in NEW/SGLWEXEC and NEW/SGLWSAMP and replace the deprecicated version with these new ones.
 
 5. Follow installation instruction in  README
