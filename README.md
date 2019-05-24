@@ -2,7 +2,7 @@
 
 This is the repository for the IBM Db2 Workload Generator created by Mike Bracey and Steve Speller.
 
-This workload was designed for Db2 v7 and modified to work on Db2V10. Since there are customers requested to enhance this workload to work on the latest Db2 version
+This workload was designed for Db2 v7 and modified to work on up to Db2V10. Since there are customers requested to enhance this workload to work on the latest Db2 version
 , we post this workload and create a branch for Db2 version 11 and above. 
 
 Here are steps to install this workload onto your lpar:
