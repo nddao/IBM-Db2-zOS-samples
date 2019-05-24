@@ -9,17 +9,20 @@ Here are steps to install this workload onto your lpar:
 
 1. Download files from folder DataFiles and XMITSFiles and put them on your LPAR.
 
-1. Download GLWDEFDS and GLWINST from folder JCLs and put them on your LPAR. These JCL are sample JCLS to define all datasets for XMIT and TRS files, so you need to customize it for your environment.
+1. Download GLWDEFDS and GLWINST from folder JCLs and put them on your LPAR. These JCL are sample JCLS to define all datasets for XMIT and TRS files, so you need to customize them for your environment.
 
 1. Excecute above JCLs to install GLW onto your LPAR.  You should have the following datasets:
 
-
-
 *.SGLWDATA.GLWLD5K.GLWTDPT.TRS
+
 *.SGLWDATA.GLWLD5K.GLWTEMP.TRS
+
 *.SGLWDATA.GLWLD5K.GLWTPRJ.TRS
+
 *.SGLWDATA.GLWLD5K.GLWTPJA.TRS
+
 *.SGLWDATA.GLWLD5K.GLWTEPA.TRS
+
 
 1. Get the latest support datasets in SGLWEXEC and SGLWSAMP and replace the deprecicated version with these new ones.
 
