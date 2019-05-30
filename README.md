@@ -14,13 +14,21 @@ Here are steps to install this workload onto your lpar:
 1. Excecute above JCLs to install GLW onto your LPAR.  You should have the following datasets:
 
 [HLQ].GLW.SGLWDBRM
+
 [HLQ].GLW.SGLWEXEC
+
 [HLQ].GLW.SGLWLOAD
+
 [HLQ].GLW.SGLWMLIB
+
 [HLQ].GLW.SGLWSAMP
+
 [HLQ].GLW.SGLWSLIB
+
 [HLQ].GLW.SGLWSRCC
+
 [HLQ].GLW.SGLWSRCN
+
 [HLQ].GLW.SGLWTABD
 
 [HLQ].SGLWDATA.GLWLD5K.GLWTDPT.TRS
