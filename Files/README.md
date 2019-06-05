@@ -2,7 +2,7 @@
 
 This folder contains datasets for the GLW workload. After transfering these .XMIT files to zOS LPAR using FTP to defined PDS datasets, we will use JCLs/GLWINST to unpack/terse them. 
 
-### 1. SGLWCFG:  
+### 1. SGLWCFG  
     Sample JCLs to set up and run the workload. These JCLs are from the SGLWSAMP and customized for the test environment. This set up uses the default values
 
 	* CRTSG : sample JCL to create store group GLW01.   
@@ -35,10 +35,10 @@ This folder contains datasets for the GLW workload. After transfering these .XMI
 	
 	* WLMSAMP   : sample WLM environment definition.
 	
-### 2. SGLWDBRM : 
+### 2. SGLWDBRM  
      DBRM  for the GLW workload.
 
-### 3. SGLWEXEC : 
+### 3. SGLWEXEC  
      REXX modules for the GLW workload. 
 
 	* CRTSPCAT  : REXX module to creare stored procedure code.
@@ -55,21 +55,26 @@ This folder contains datasets for the GLW workload. After transfering these .XMI
 	
 	* SLEEP     : REXX function to wait x seconds.
 	
-### 4. SGLWLOAD : 
+### 4. SGLWLOAD  
 	LOAD modules for the GLW workload.
 
-### 5. SGLWMLIB : 
+### 5. SGLWMLIB  
 	Library for the GLW workload to display error messages.
 
-6. SGLWSAMP : sample JCL to run the workload. These JCLs are copied to SGLWCFG  then customized for the running environment. For description, please see SGLWCFG section above.
+### 6. SGLWSAMP  
+	Sample JCL to run the workload. These JCLs are copied to SGLWCFG  then customized for the running environment. For description, please see SGLWCFG section above.
 
-7. SGLWSLIB : library for the GLW workload.
+### 7. SGLWSLIB 
+	Library for the GLW workload.
 
-8. SGLWSRCC : DDL to create stored procedures ( in C language )used by the GLW workload.
+### 8. SGLWSRCC
+	DDL to create stored procedures ( in C language )used by the GLW workload.
 
-9. SGLWSRCN : DDL to create stored procedures ( Native stored procedure ) used by the GLW workload.
+### 9. SGLWSRCN 
+	DDL to create stored procedures ( Native stored procedure ) used by the GLW workload.
 
-10. SGLWTABD: DDL to load some data into tables of the GLW workload.
+### 10. SGLWTABD
+	DDL to load some data into tables of the GLW workload.
 
 
 
