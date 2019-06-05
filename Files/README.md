@@ -2,7 +2,7 @@
 
 This folder contains datasets for the GLW workload. After transfering these .XMIT files to zOS LPAR using FTP to defined PDS datasets, we will use JCLs/GLWINST to unpack/terse them. 
 
-1. SGLWCFG:  sample JCLs to set up and run the workload. These JCLs are from the SGLWSAMP and customized for the test environment. This set up uses the default values
+1. ###SGLWCFG:  sample JCLs to set up and run the workload. These JCLs are from the SGLWSAMP and customized for the test environment. This set up uses the default values
 
 	* CRTSG : sample JCL to create store group GLW01.   
 	
