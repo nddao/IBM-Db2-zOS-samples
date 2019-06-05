@@ -4,7 +4,7 @@ This folder contains datasets for the GLW workload. After transfering these .XMI
 
 1. SGLWCFG:  sample JCLs to set up and run the workload. These JCLs are from the SGLWSAMP and customized for the test environment. This set up uses the default values
 
-	* CRTSG : samplr JCL to create store group GLW01.   
+	* CRTSG : sample JCL to create store group GLW01.   
 	
 	* GLWBUILD  : sample JCL to create database and objects for the GLW workload.   
 	
@@ -37,13 +37,20 @@ This folder contains datasets for the GLW workload. After transfering these .XMI
 2. 	SGLWDBRM : DBRM  for the GLW workload.
 
 3. SGLWEXEC : REXX modules for the GLW workload. 
-	CRTSPCAT  : REXX module to creare stored procedure code.
-	DB2LOCK1  : REXX module to lock a Db2 table for a time interval.
-	GLW       : REXX EXEC to act as an interface to the GLW.
-	GLWBUILD  : REXX module to build environment for the GLW, called by GLWRUN.
-	GLWDB2LV  : REXX function to find the current level of Db2 subsystem.
-	GLWRUN    : REXX module to drive the workload.
-	SLEEP     : REXX function to wait x seconds.
+
+	* CRTSPCAT  : REXX module to creare stored procedure code.
+	
+	* DB2LOCK1  : REXX module to lock a Db2 table for a time interval.
+	
+	* GLW       : REXX EXEC to act as an interface to the GLW.
+	
+	* GLWBUILD  : REXX module to build environment for the GLW, called by GLWRUN.
+	
+	* GLWDB2LV  : REXX function to find the current level of Db2 subsystem.
+	
+	* GLWRUN    : REXX module to drive the workload.
+	
+	* SLEEP     : REXX function to wait x seconds.
 	
 4. SGLWLOAD : LOAD modules for the GLW workload.
 
@@ -58,6 +65,7 @@ This folder contains datasets for the GLW workload. After transfering these .XMI
 9. SGLWSRCN : DDL to create stored procedures ( Native stored procedure ) used by the GLW workload.
 
 10. SGLWTABD: DDL to load some data into tables of the GLW workload.
+
 
 
 The .TRS files are data files  to be used to load into GLW tables.
