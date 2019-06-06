@@ -76,7 +76,7 @@ Here are steps to install this workload onto your lpar:
 	
 1. Steps to build and run the GLW workload
 
-	1. ####Build database
+	1. #### Build database
 	
 		After customizing the common parameters in SGLWCFG(GLWPARM0) and SGLWCFG(GLWDDL), you can customize SGLWCFG(GLWBUILD) to build database for the GLW workload on your environment. 
 		You need to correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, and SQLID, then you can submit GLWBUILD job.  
