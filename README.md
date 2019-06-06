@@ -81,12 +81,20 @@ Here are steps to install this workload onto your lpar:
 	1. #### Build database
 	
 		After customizing the common parameters in SGLWCFG(GLWPARM0) and SGLWCFG(GLWDDL), you can customize SGLWCFG(GLWBUILD) to build database for the GLW workload on your environment. 
-		You need to correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, and SQLID before submitting GLWBUILD job. You should see message "Database was successfully built" if there is no error.
+		You need to correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, DBASENME , and SQLID before submitting GLWBUILD job. You should see message "Database was successfully built" if there is no error.
 
 		You could modify and use sample JCL SGLWCFG(GLWTBSEL) to get the row count of major tables of the GLW. If row count is 0, then tables have not been loaded. This could be the set up of SYSPROC.DSNUTILU is not correct.
 		In this case, you could customize JCL SGLWCFG(GLWLDALL) and SGLWCFG(GLWRSTAT) to load data then perform RUNSTATS.
 		
 		If you need to remove all objects created for the GLW workload, please customize and use SGLWCFG(GLWDROP).
+		
+	1. ### Run the workload
+		
+		You need to customize SGLWCFG(GLWRUN) before trying to run the GLW workload. The correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, SQLID, STORPROC, and DBASENME are needed before running the workload.
+		This workload support Native stored procedures, C stored procedures, and Java stored procedures. However, you need to specify the same one you pick for the BUILD. RUNTIME parameter specifies the duration of the run in minutes.
+		After the workload finishes running, you should see the summary in the job log as sample below
+			Summary .....
+		
 		
 	
 	
