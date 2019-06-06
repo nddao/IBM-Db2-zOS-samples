@@ -7,9 +7,9 @@ This workload was designed for Db2 v7 and modified to work on up to Db2V10. Sinc
 
 Here are steps to install this workload onto your lpar:
 
-1. Download GLWDEFDS and GLWINST from folder JCLs and put them on your LPAR. These JCL are sample JCLS to define all datasets for XMIT and TRS files, so you need to customize them with [HLQ] for your environment.
+1. Download GLWDEFDS and GLWINST from folder JCLs and put them on your LPAR. These JCLs are sample JCLS to define all datasets for XMIT and TRS files, so you need to customize them with [HLQ] for your environment.
 Alternately, we provide a sample JCL  FILES/DEF.JCL and FILES/UNPACK.JCL so you can submit them from your Windows workstation to define datasets and unpack the received datasets by executing the following command on Windows command prompt
-ftp -s:define.txt to execute the JCL to define datasets for GLW.
+ftp -s:define.txt.
 
 1. Download files from folder Files and FTP them on your LPAR. File upload.txt is the sample ftp script to upload the datasets to your LPAR. Please customize them for your environment.
 After uploading dataset onto zOS LPAR,  you need to either run the GLWINST from your LPAR or execute ftp -s:UNPACK.TXT to unpack the XMIT files and TRS files to datasets.
@@ -36,19 +36,26 @@ After uploading dataset onto zOS LPAR,  you need to either run the GLWINST from 
 		
 		[HLQ].GLW.SGLWCFG
 
-		[HLQ].SGLWDATA.GLWLD5K.GLWTDPT.TRS
+		[HLQ].SGLWDATA.GLWLD5K.GLWTDPT
 
-		[HLQ].SGLWDATA.GLWLD5K.GLWTEMP.TRS
+		[HLQ].SGLWDATA.GLWLD5K.GLWTEMP
 
-		[HLQ].SGLWDATA.GLWLD5K.GLWTPRJ.TRS
+		[HLQ].SGLWDATA.GLWLD5K.GLWTPRJ
 
-		[HLQ].SGLWDATA.GLWLD5K.GLWTPJA.TRS
+		[HLQ].SGLWDATA.GLWLD5K.GLWTPJA
 
-		[HLQ].SGLWDATA.GLWLD5K.GLWTEPA.TRS
+		[HLQ].SGLWDATA.GLWLD5K.GLWTEPA
 
-	For description of members in those PDS datasets, please see README.MD file.
+	For description of members in those PDS datasets, please see Files/README.MD.
 
-1. By default, the workload uses schema GLWSAMP so if you plan to use a different schema, then please replace GLWSAMP by your schema name in the following datasets:
-	* 
-	*
+1. 	NOTE:
+	
+	1. By default, the workload uses schema GLWSAMP so if you plan to use a different schema, then please replace GLWSAMP by your schema name for:
+
+		* GLW.SGLWCFG/SGLSAMP: members GLWBUILD, GLWDDL, GLWDROP, GLWLDALL, GLWPARM0, and GLWRUN.
+	
+		* All members in GLW.SGLWSRCC, GLW.SGLWSRCN, and GLW.SGLWTABD.
+	
+	1. Since GLW uses a predefined storage group GLWG01, you could use the sample JCL GLW.SGLWCFG(CRTSG) to define one for your environment.
+	
 	
