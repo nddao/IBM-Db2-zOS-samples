@@ -19,11 +19,11 @@ Here are steps to install this workload onto your lpar:
 	
 	To execute the helper batch scripts, you just run the following command at Windows command prompt: ftp -s:windowbatchscript. Here are example commands
 	
-		a. ftp -s:define.txt   : to submit JCL to define datasets for XMIT/TRS files.
+		* ftp -s:define.txt   : to submit JCL to define datasets for XMIT/TRS files.
 		
-		b. ftp -s:upload.txt   : to ftp downloaded files to the predefined datasets for XMIT/TRS files.
+		* ftp -s:upload.txt   : to ftp downloaded files to the predefined datasets for XMIT/TRS files.
 		
-		c. ftp -s:unpak.txt    : to submit JCL to unpack the XMIT datasets and unterse the TRS datasets. 	
+		* ftp -s:unpak.txt    : to submit JCL to unpack the XMIT datasets and unterse the TRS datasets. 	
 	
 1. After getting files onto your LPAR, besides the XMIT and TRS datasets, you should have the following datasets:
 
