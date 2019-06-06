@@ -88,16 +88,31 @@ Here are steps to install this workload onto your lpar:
 		
 		If you need to remove all objects created for the GLW workload, please customize and use SGLWCFG(GLWDROP).
 		
-	1. ### Run the workload
+	1. #### Run the workload
 		
 		You need to customize SGLWCFG(GLWRUN) before trying to run the GLW workload. The correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, SQLID, STORPROC, and DBASENME are needed before running the workload.
 		
-		This workload support Native stored procedures, C stored procedures, and Java stored procedures. However, you need to specify the same one you specified in GLWBUILD. 
+		This workload supports Native stored procedures, C stored procedures, and Java stored procedures. However, you need to specify the same one you specified in GLWBUILD. 
 		
 		RUNTIME parameter specifies the duration of the run in minutes. After the workload finishes running, you should see the summary in the job log as sample below
 		
-				Summary .....
-		
+							Table row count before and after report                      
+				Table name                      Before      After Difference 
+				GLWSAMP.GLWTACT                     18         18          0 
+				GLWSAMP.GLWTDNG                      0          0          0 
+				GLWSAMP.GLWTDPT                   5000      15616      10616 
+				GLWSAMP.GLWTEMP                  30000     158793     128793 
+				GLWSAMP.GLWTENG                      0          0          0 
+				GLWSAMP.GLWTEPA                 405000    1618030    1213030 
+				GLWSAMP.GLWTJBS                     15         15          0 
+				GLWSAMP.GLWTLCN                     31         31          0 
+				GLWSAMP.GLWTLNG                      0          0          0 
+				GLWSAMP.GLWTLNM                    351        351          0 
+				GLWSAMP.GLWTPGW                     57         57          0 
+				GLWSAMP.GLWTPJA                 135000     602946     467946 
+				GLWSAMP.GLWTPNG                      0          0          0 
+				GLWSAMP.GLWTPRJ                   7500      33497      25997 
+				GLWSAMP.GLWTSFN                     84         84          0 
 		
 	
 	
