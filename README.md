@@ -11,6 +11,7 @@ Here are steps to install this workload onto your lpar:
 1. Clone or download all files onto your work station.
 
 1. Get files onto your LPAR.
+
 	After cloning this repository or downloading files onto your work station, you need to customize the helper files in folder FILES before executing those helper batch scripts.
 	
 	The hostname, userID, and password in the sample Windows batch scripts need to be changed for your environment if you plan to use these Windows batch files to automate the process. 
@@ -57,7 +58,7 @@ Here are steps to install this workload onto your lpar:
 
 		[HLQ].SGLWDATA.GLWLD5K.GLWTEPA
 
-	For description of members in those PDS datasets, please see Files/README.MD.
+	For description of members in those PDS datasets, please see README in folder FILES.
 
 1. 	NOTE:
 	
