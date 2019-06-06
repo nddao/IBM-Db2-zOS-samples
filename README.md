@@ -60,19 +60,25 @@ Here are steps to install this workload onto your lpar:
 
 	For description of members in those PDS datasets, please see README in folder FILES.
 
-1. 	NOTE:
+1. 	Customize the workload for your environment:
 	
 	1. Since GLW uses a predefined storage group GLWG01, you could use the sample JCL GLW.SGLWCFG(CRTSG) to define one for your environment.
 	
-	1. By default, the workload uses schema GLWSAMP so if you plan to use a different schema, then please replace GLWSAMP by your schema name for:
+	1. The GLW workload uses a WLM for stored procedures and a WLM for Utility, so you should update the member SGLWCFG(GLWPARM0), and all members in GLW.SGLWSRCC if you plan to use C stored procesures, all member in SGLWSRCN if you plan to use Native stored procedures to use the correct WLM.
+	
+	1. By default, the workload uses schema GLWSAMP, so if you plan to use a different schema then please replace GLWSAMP by your new schema name for:
 
 		* GLW.SGLWCFG/SGLSAMP: members GLWBUILD, GLWDDL, GLWDROP, GLWLDALL, GLWPARM0, and GLWRUN.
 	
-		* All members in GLW.SGLWSRCC, GLW.SGLWSRCN, and GLW.SGLWTABD.
+		* All members in GLW.SGLWSRCC, GLW.SGLWSRCN, and GLW.SGLWTABD.	 
+	
+	1. We might add REXX script to replace a string by another string for all members in a PDS dataset later.
 	
 1. Steps to build and run the GLW workload
 
-	1. 
+	1. Build database
+		After customizing the common parameters in SGLWCFG(GLWPARM0) and SGLWCFG(GLWDDL), you can customize SGLWCFG(GLWBUILD) to build database for the GLW workload on your environment. 
+		You need to correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, and SQLID, then you can submit GLWBUILD job.  
 	
 	
 	
