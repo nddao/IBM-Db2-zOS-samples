@@ -8,9 +8,9 @@ To install this workload onto your LPAR, you need to get the XMIT files and TRS 
 
 Here are steps to install this workload onto your lpar:
 
-1. Clone or download all files onto your work station.
+1. ### Clone or download ### all files onto your work station.
 
-1. Get files onto your LPAR.
+1. ### Get files onto your LPAR.
 
 	After cloning this repository or downloading files onto your work station, you need to customize the helper files in folder FILES before executing those helper batch scripts.
 	
@@ -26,7 +26,9 @@ Here are steps to install this workload onto your lpar:
 		
 		* ftp -s:unpak.txt    : to submit JCL to unpack the XMIT datasets and unterse the TRS datasets. 	
 	
-1. After getting files onto your LPAR, besides the XMIT and TRS datasets, you should have the following datasets:
+1. ### Verifying the installation
+
+	After getting files onto your LPAR, besides the XMIT and TRS datasets, you should have the following datasets:
 
 		[HLQ].GLW.SGLWDBRM
 
@@ -60,7 +62,7 @@ Here are steps to install this workload onto your lpar:
 
 	For description of members in those PDS datasets, please see README in folder FILES.
 
-1. 	Customize the workload for your environment:
+1. 	### Customize the workload for your environment:
 	
 	1. Since GLW uses a predefined storage group GLWG01, you could use the sample JCL GLW.SGLWCFG(CRTSG) to define one for your environment.
 	
@@ -74,7 +76,7 @@ Here are steps to install this workload onto your lpar:
 	
 	1. We might add REXX script to replace a string by another string for all members in a PDS dataset later.
 	
-1. Steps to build and run the GLW workload
+1. ### Steps to build and run the GLW workload
 
 	1. #### Build database
 	
