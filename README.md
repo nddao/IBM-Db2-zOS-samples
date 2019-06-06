@@ -91,9 +91,12 @@ Here are steps to install this workload onto your lpar:
 	1. ### Run the workload
 		
 		You need to customize SGLWCFG(GLWRUN) before trying to run the GLW workload. The correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, SQLID, STORPROC, and DBASENME are needed before running the workload.
-		This workload support Native stored procedures, C stored procedures, and Java stored procedures. However, you need to specify the same one you pick for the BUILD. RUNTIME parameter specifies the duration of the run in minutes.
-		After the workload finishes running, you should see the summary in the job log as sample below
-			Summary .....
+		
+		This workload support Native stored procedures, C stored procedures, and Java stored procedures. However, you need to specify the same one you specified in GLWBUILD. 
+		
+		RUNTIME parameter specifies the duration of the run in minutes. After the workload finishes running, you should see the summary in the job log as sample below
+		
+				Summary .....
 		
 		
 	
