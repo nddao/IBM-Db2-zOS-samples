@@ -1,6 +1,6 @@
 # File descriptions.
 
-This folder contains datasets for the GLW workload. After transfering these .XMIT files to zOS LPAR using FTP to defined PDS datasets, we will use JCLs/GLWINST to unpack/terse them. 
+This folder contains datasets for the GLW workload. You need to define PDS datasets to receive XMIT and TRS datasets, ftp files to zOS LPAR, and unpack XMI/TRS datasets. We provide several helper files to assist you to perform those tasks.
 
 ### 1. List of helper files to define datasets, upload files to zOS LPAR, and unpack .XMIT/TRS datasets
 	
@@ -14,7 +14,10 @@ This folder contains datasets for the GLW workload. After transfering these .XMI
 	
 	* UNPAK.TXT : Sample Windows batch script to submit UNPAK.JCL to zOS LPAR.
 	
-	Note that you need to customize those above JCLs and batch scripts for your environment.
+	Note:
+	** You need to customize those above JCLs and batch scripts for your environment.
+	
+	** ftp -s:windowsbatchfile is the command on Windows command prompt to run a Windows batch script.
 	
 ### 1. SGLWCFG  
     Sample JCLs to set up and run the workload. These JCLs are from the SGLWSAMP and customized for the test environment. This set up uses the default values
