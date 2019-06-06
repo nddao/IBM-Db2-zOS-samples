@@ -8,7 +8,7 @@ To install this workload onto your LPAR, you need to get the XMIT files and TRS 
 
 Here are steps to install this workload onto your lpar:
 
-1. ### Clone or download ### all files onto your work station.
+1. ### Clone or download all files onto your work station.
 
 1. ### Get files onto your LPAR.
 
@@ -81,7 +81,13 @@ Here are steps to install this workload onto your lpar:
 	1. #### Build database
 	
 		After customizing the common parameters in SGLWCFG(GLWPARM0) and SGLWCFG(GLWDDL), you can customize SGLWCFG(GLWBUILD) to build database for the GLW workload on your environment. 
-		You need to correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, and SQLID, then you can submit GLWBUILD job.  
+		You need to correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, and SQLID before submitting GLWBUILD job. You should see message "Database was successfully built" if there is no error.
+
+		You could modify and use sample JCL SGLWCFG(GLWTBSEL) to get the row count of major tables of the GLW. If row count is 0, then tables have not been loaded. This could be the set up of SYSPROC.DSNUTILU is not correct.
+		In this case, you could customize JCL SGLWCFG(GLWLDALL) and SGLWCFG(GLWRSTAT) to load data then perform RUNSTATS.
+		
+		If you need to remove all objects created for the GLW workload, please customize and use SGLWCFG(GLWDROP).
+		
 	
 	
 	
