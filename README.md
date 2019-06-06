@@ -50,12 +50,17 @@ After uploading dataset onto zOS LPAR,  you need to either run the GLWINST from 
 
 1. 	NOTE:
 	
+	1. Since GLW uses a predefined storage group GLWG01, you could use the sample JCL GLW.SGLWCFG(CRTSG) to define one for your environment.
+	
 	1. By default, the workload uses schema GLWSAMP so if you plan to use a different schema, then please replace GLWSAMP by your schema name for:
 
 		* GLW.SGLWCFG/SGLSAMP: members GLWBUILD, GLWDDL, GLWDROP, GLWLDALL, GLWPARM0, and GLWRUN.
 	
 		* All members in GLW.SGLWSRCC, GLW.SGLWSRCN, and GLW.SGLWTABD.
 	
-	1. Since GLW uses a predefined storage group GLWG01, you could use the sample JCL GLW.SGLWCFG(CRTSG) to define one for your environment.
+1. Steps to build and run the GLW workload
+
+	1. 
+	
 	
 	
