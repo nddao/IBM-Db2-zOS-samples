@@ -2,6 +2,20 @@
 
 This folder contains datasets for the GLW workload. After transfering these .XMIT files to zOS LPAR using FTP to defined PDS datasets, we will use JCLs/GLWINST to unpack/terse them. 
 
+### 1. List of helper files to define datasets, upload files to zOS LPAR, and unpack .XMIT/TRS datasets
+	
+	* GLWDEFDS.JCL: JCL to define datasets for XMIT and TRS datasets.
+	
+	* DEFINE.TXT : Sample Windows batch script to submit GLWDEFDS.JCL to zOS LPAR.
+	
+	* UPLOAD.TXT: Sample Windows batch file to ftp XMIT and TRS files to zOS LPAR.
+	
+	* UNPAK.JCL : JCL to unpack XMIT datasets and terse TRS datasets.
+	
+	* UNPAK.TXT : Sample Windows batch script to submit UNPAK.JCL to zOS LPAR.
+	
+	Note that you need to customize those above JCLs and batch scripts for your environment.
+	
 ### 1. SGLWCFG  
     Sample JCLs to set up and run the workload. These JCLs are from the SGLWSAMP and customized for the test environment. This set up uses the default values
 
@@ -35,10 +49,10 @@ This folder contains datasets for the GLW workload. After transfering these .XMI
 	
 	* WLMSAMP   : sample WLM environment definition.
 	
-### 2. SGLWDBRM  
+### 1. SGLWDBRM  
      DBRM  for the GLW workload.
 
-### 3. SGLWEXEC  
+### 1. SGLWEXEC  
      REXX modules for the GLW workload. 
 
 	* CRTSPCAT  : REXX module to creare stored procedure code.
@@ -55,27 +69,27 @@ This folder contains datasets for the GLW workload. After transfering these .XMI
 	
 	* SLEEP     : REXX function to wait x seconds.
 	
-### 4. SGLWLOAD  
+### 1. SGLWLOAD  
 	LOAD modules for the GLW workload.
 
-### 5. SGLWMLIB  
+### 1. SGLWMLIB  
 	Library for the GLW workload to display error messages.
 
-### 6. SGLWSAMP  
+### 1. SGLWSAMP  
 	Sample JCL to run the workload. These JCLs are copied to SGLWCFG  then customized for the running environment. For description, please see SGLWCFG section above.
 
-### 7. SGLWSLIB 
+### 1. SGLWSLIB 
 	Library for the GLW workload.
 
-### 8. SGLWSRCC
+### 1. SGLWSRCC
 	DDL to create stored procedures ( in C language )used by the GLW workload.
 
-### 9. SGLWSRCN 
+### 1. SGLWSRCN 
 	DDL to create stored procedures ( Native stored procedure ) used by the GLW workload.
 
-### 10. SGLWTABD
+### 1. SGLWTABD
 	DDL to load some data into tables of the GLW workload.
 
-
-
-The .TRS files are data files  to be used to load into GLW tables.
+### 1. .TRS files
+	
+	The .TRS files are data files  to be used to load into GLW tables.
