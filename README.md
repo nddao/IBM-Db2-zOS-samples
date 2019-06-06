@@ -8,16 +8,16 @@ To install this workload onto your LPAR, you need to get the XMIT files and TRS 
 
 Here are steps to install this workload onto your lpar:
 
-1. Clone or download all files in folder Files onto your work station.
+1. Clone or download all files onto your work station.
 
-1. Get files onto LPAR.
-	* After cloning this repository or downloading files onto your work station, you need to customize the helper files in folder Files before executing those helper batch scripts.
+1. Get files onto your LPAR.
+	After cloning this repository or downloading files onto your work station, you need to customize the helper files in folder FILES before executing those helper batch scripts.
 	
 	The hostname, userID, and password in the sample Windows batch scripts need to be changed for your environment if you plan to use these Windows batch files to automate the process. 
 	
-	You also need to update the [HLQ} for datasets in the GLWDEFDS.JCL, UPLOAD.TXT, and  UNPAK.JCL. These JCL are for defining datasets for XMIT/TRS files, FTP files to zOS LPAR, and unpack/unterse the XMIT/TRS dataset into PDS datasets.
+	You also need to update the [HLQ] for dataset name in GLWDEFDS.JCL, UPLOAD.TXT, and  UNPAK.JCL. These JCLs are for defining datasets for XMIT/TRS files, FTPing files to zOS LPAR, and unpacking the XMIT/TRS datasets into PDS datasets.
 	
-    To execute the helper batch scripts, you just run the following command at Windows command prompt ftp -s:windowbatchscript. Here are example commands
+	To execute the helper batch scripts, you just run the following command at Windows command prompt: ftp -s:windowbatchscript. Here are example commands
 	
 		a. ftp -s:define.txt   : to submit JCL to define datasets for XMIT/TRS files.
 		
