@@ -1,25 +1,27 @@
 # File descriptions.
 
-This folder contains datasets for the GLW workload. You need to define PDS datasets to receive XMIT and TRS datasets, ftp files to zOS LPAR, and unpack XMI/TRS datasets. We provide several helper files to assist you to perform those tasks.
+This folder contains datasets for the GLW workload. You need to define PDS datasets to receive XMIT and TRS datasets, ftp files to zOS LPAR, then unpack the XMIT/TRS datasets. We provide several helper files to assist you to perform those tasks.
 
-### 1. List of helper files to define datasets, upload files to zOS LPAR, and unpack .XMIT/TRS datasets
+### 1. Helper files 
+	To define datasets, upload files to zOS LPAR, and unpack XMIT/TRS datasets, you can use sample helper files below.
 	
 	* GLWDEFDS.JCL: JCL to define datasets for XMIT and TRS datasets.
 	
 	* DEFINE.TXT : Sample Windows batch script to submit GLWDEFDS.JCL to zOS LPAR.
 	
-	* UPLOAD.TXT: Sample Windows batch file to ftp XMIT and TRS files to zOS LPAR.
+	* UPLOAD.TXT: Sample Windows batch file to ftp XMIT and TRS files to predefined datasets in zOS LPAR.
 	
 	* UNPAK.JCL : JCL to unpack XMIT datasets and terse TRS datasets.
 	
 	* UNPAK.TXT : Sample Windows batch script to submit UNPAK.JCL to zOS LPAR.
 	
 	Note:
-	** You need to customize those above JCLs and batch scripts for your environment.
 	
-	** ftp -s:windowsbatchfile is the command on Windows command prompt to run a Windows batch script.
+	* You need to customize those above JCLs and batch scripts for your environment( Hostname, userID, password for FTP, [HLQ] for MVS datasets ).
 	
-### 1. SGLWCFG  
+	* ftp -s:windowsbatchfile is the command on Windows command prompt to run a Windows batch script.
+	
+### 2. SGLWCFG  
     Sample JCLs to set up and run the workload. These JCLs are from the SGLWSAMP and customized for the test environment. This set up uses the default values
 
 	* CRTSG : sample JCL to create store group GLW01.   
@@ -52,10 +54,10 @@ This folder contains datasets for the GLW workload. You need to define PDS datas
 	
 	* WLMSAMP   : sample WLM environment definition.
 	
-### 1. SGLWDBRM  
+### 3. SGLWDBRM  
      DBRM  for the GLW workload.
 
-### 1. SGLWEXEC  
+### 4. SGLWEXEC  
      REXX modules for the GLW workload. 
 
 	* CRTSPCAT  : REXX module to creare stored procedure code.
@@ -72,27 +74,26 @@ This folder contains datasets for the GLW workload. You need to define PDS datas
 	
 	* SLEEP     : REXX function to wait x seconds.
 	
-### 1. SGLWLOAD  
+### 5. SGLWLOAD  
 	LOAD modules for the GLW workload.
 
-### 1. SGLWMLIB  
+### 6. SGLWMLIB  
 	Library for the GLW workload to display error messages.
 
-### 1. SGLWSAMP  
+### 7. SGLWSAMP  
 	Sample JCL to run the workload. These JCLs are copied to SGLWCFG  then customized for the running environment. For description, please see SGLWCFG section above.
 
-### 1. SGLWSLIB 
+### 8. SGLWSLIB 
 	Library for the GLW workload.
 
-### 1. SGLWSRCC
+### 9. SGLWSRCC
 	DDL to create stored procedures ( in C language )used by the GLW workload.
 
-### 1. SGLWSRCN 
+### 10. SGLWSRCN 
 	DDL to create stored procedures ( Native stored procedure ) used by the GLW workload.
 
-### 1. SGLWTABD
+### 11. SGLWTABD
 	DDL to load some data into tables of the GLW workload.
 
-### 1. .TRS files
-	
+### 12. .TRS files	
 	The .TRS files are data files  to be used to load into GLW tables.
