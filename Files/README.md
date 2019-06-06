@@ -15,7 +15,7 @@ This folder contains datasets for the GLW workload. You need to define PDS datas
 	
 	* UNPAK.TXT : Sample Windows batch script to submit UNPAK.JCL to zOS LPAR.
 	
-	####Note:
+	Notes:
 	
 	* You need to customize those above JCLs and batch scripts for your environment( Hostname, userID, password for FTP, [HLQ] for MVS datasets ).
 	
