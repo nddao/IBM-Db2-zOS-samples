@@ -25,7 +25,7 @@ Here are steps to install this workload onto your lpar:
 		
 		* ftp -s:upload.txt   : to ftp downloaded files to the predefined datasets for XMIT/TRS files.
 		
-		* ftp -s:unpak.txt    : to submit JCL to unpack the XMIT datasets and unterse the TRS datasets. 	
+		* ftp -s:unpack.txt    : to submit JCL to unpack the XMIT datasets and unterse the TRS datasets. 	
 	
 1. ### Verifying the installation
 
