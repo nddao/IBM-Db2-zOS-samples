@@ -26,7 +26,7 @@ This folder contains datasets for the GLW workload. You need to define PDS datas
 
 	* CRTSG : sample JCL to create store group GLW01.   
 	
-	* GLWBUILD  : sample JCL to create database and objects for the GLW workload.   
+	* GLWSETUP  : sample JCL to create database and objects for the GLW workload.   
 	
 	* GLWDEFDS  : sample JCL to define all xmit and trs dataset to prepare to receive files from FTP process.
 	
@@ -54,6 +54,8 @@ This folder contains datasets for the GLW workload. You need to define PDS datas
 	
 	* WLMSAMP   : sample WLM environment definition.
 	
+	* STREPLAC  : sample JCL to replace a string by another string for all members in a PDS dataset. 
+	
 ### 3. SGLWDBRM  
      DBRM  for the GLW workload.
 
@@ -73,6 +75,8 @@ This folder contains datasets for the GLW workload. You need to define PDS datas
 	* GLWRUN    : REXX module to drive the workload.
 	
 	* SLEEP     : REXX function to wait x seconds.
+	
+	* STRREPL   : REXX module to replace a string by another string for all members in a PDS dataset. 
 	
 ### 5. SGLWLOAD  
 	LOAD modules for the GLW workload.

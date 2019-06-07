@@ -2,9 +2,10 @@
 
 This is the repository for the IBM Db2 Workload Generator created by Mike Bracey and Steve Speller.
 
-This workload was designed for Db2 v7 and modified to work up to Db2V10 by the original authors. Since there are customers requested to enhance this workload to work on the latest Db2 version, we removed the code for V10 and below, and enhance it to work on Db2 V11 and above. 
+This workload was designed for Db2 v7 and modified to work up to Db2V10 by the original authors. Since there are customers requested to enhance this workload to work on the latest Db2 version, we removed the code for V10 and below, and enhance it to work on Db2 V11 and above. The enhancements include using SYSPROC.DSNUTILU to replace SYSPROC.DSNUTILS, and UTS tablespaces to replace non-UTS tablespaces. 
 
 To install this workload onto your LPAR, you need to get the XMIT files and TRS files to your working LPAR, unpack the datasets, and customize the scripts/JCLs for your environment.
+You can use provided JCLs to define datasets for XMIT/TRS, then FTP files to zOS, and use JCL to unpack the XMIT/TRS datasets. You also can customize the provided sample  Windows batch scripts to perform those above tasks.
 
 Here are steps to install this workload onto your lpar:
 
@@ -28,7 +29,7 @@ Here are steps to install this workload onto your lpar:
 	
 1. ### Verifying the installation
 
-	After getting files onto your LPAR, besides the XMIT and TRS datasets, you should have the following datasets:
+	After getting and unpacking files onto your LPAR, besides the XMIT and TRS datasets, you should have the following datasets:
 
 		[HLQ].GLW.SGLWDBRM
 
@@ -66,24 +67,25 @@ Here are steps to install this workload onto your lpar:
 	
 	1. Since GLW uses a predefined storage group GLWG01, you could use the sample JCL GLW.SGLWCFG(CRTSG) to define one for your environment.
 	
-	1. The GLW workload uses a WLM for stored procedures and a WLMU for Utility, so you should update the member SGLWCFG(GLWPARM0), and all members in GLW.SGLWSRCC if you plan to use C stored procesures, all member in SGLWSRCN if you plan to use Native stored procedures to use the correct WLM.
+	1. The GLW workload uses a WLM for stored procedures and a WLMU for Utility, so you should update the member SGLWCFG(GLWPARM0) to use the correct WLMs.
 	
 	1. By default, the workload uses schema GLWSAMP, so if you plan to use a different schema then please replace GLWSAMP by your new schema name for:
 
-		* GLW.SGLWCFG/SGLSAMP: members GLWBUILD, GLWDDL, GLWDROP, GLWLDALL, GLWPARM0, and GLWRUN.
+		* SGLWCFG/SGLSAMP: members GLWBUILD, GLWDDL, GLWDROP, GLWLDALL, GLWPARM0, and GLWRUN.
 	
 		* All members in GLW.SGLWSRCC, GLW.SGLWSRCN, and GLW.SGLWTABD.	 
 	
-	1. We might add REXX script to replace a string by another string for all members in a PDS dataset later.
+		* We provide a REXX script SGLWEXEC(STRREPL) to replace a string by another string for all members in a PDS dataset later. The JCL SGLWCFG(STREPLAC) is an example to replace old string by new string in all members in dataset DB2DRDA.GLW.SGLWWSRCN
 	
 1. ### Steps to build and run the GLW workload
 
 	1. #### Build database
 	
-		After customizing the common parameters in SGLWCFG(GLWPARM0) and SGLWCFG(GLWDDL), you can customize SGLWCFG(GLWBUILD) to build database for the GLW workload on your environment. 
+		After customizing the common parameters in SGLWCFG(GLWPARM0) and SGLWCFG(GLWDDL), you can customize SGLWCFG(GLWBUILD) to build database for the GLW workload on your environment. The original authors documented the parameters very well in the SGLWSAMP(README).
+		The original README file and SGLWEXEC(GLWRUN) are good source to understand all parameters and variables to customize the GLW workload.
 		You need to correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, DBASENME , and SQLID before submitting GLWBUILD job. You should see message "Database was successfully built" if there is no error.
 
-		You could modify and use sample JCL SGLWCFG(GLWTBSEL) to get the row count of major tables of the GLW. If row count is 0, then tables have not been loaded. This could be the set up of SYSPROC.DSNUTILU is not correct.
+		You could modify and use sample JCL SGLWCFG(GLWTBSEL) to get the row count of major tables of the GLW to validate the BUILD procedures. If row count is 0, then tables have not been loaded. This could be the SYSPROC.DSNUTILU has not been set up correctly or your environment does not have SYSPROC.DSNUTILU set up.
 		In this case, you could customize JCL SGLWCFG(GLWLDALL) and SGLWCFG(GLWRSTAT) to load data then perform RUNSTATS.
 		
 		If you need to remove all objects created for the GLW workload, please customize and use SGLWCFG(GLWDROP).
