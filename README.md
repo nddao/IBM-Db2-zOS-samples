@@ -101,7 +101,7 @@ Here are steps to install this workload onto your lpar:
 		
 		RUNTIME parameter specifies the duration of the run in minutes. After the workload finishes running, you should see the summary in the job log as sample below
 		
-							Table row count before and after report                      
+					Table row count before and after report                      
 				Table name                      Before      After Difference 
 				GLWSAMP.GLWTACT                     18         18          0 
 				GLWSAMP.GLWTDNG                      0          0          0 
@@ -125,7 +125,7 @@ Here are steps to install this workload onto your lpar:
 				GLWSAMP.GLWTVRN                      1          1          0
 				
 			
-							GLWR270I: Stored Procedure call summary                            
+					GLWR270I: Stored Procedure call summary                            
 				DPTADD   ran  13297 times at an average elapsed of    0.001 seconds
 				DPTBAL   ran  13378 times at an average elapsed of    0.001 seconds
 				DPTDEL   ran   2678 times at an average elapsed of    0.001 seconds
