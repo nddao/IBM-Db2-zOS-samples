@@ -75,13 +75,14 @@ Here are steps to install this workload onto your lpar:
 	
 		* All members in GLW.SGLWSRCC, GLW.SGLWSRCN, and GLW.SGLWTABD.	 
 	
-		* We provide a REXX script SGLWEXEC(STRREPL) to replace a string by another string for all members in a PDS dataset later. The JCL SGLWCFG(STREPLAC) is an example to replace old string by new string in all members in dataset DB2DRDA.GLW.SGLWWSRCN
+		* We provide a REXX script SGLWEXEC(STRREPL) to replace a string by another string for all members in a PDS dataset. The JCL SGLWCFG(STREPLAC) is an example to replace old string by new string in all members in dataset DB2DRDA.GLW.SGLWWSRCN
 	
 1. ### Steps to build and run the GLW workload
 
 	1. #### Build database
 	
 		After customizing the common parameters in SGLWCFG(GLWPARM0) and SGLWCFG(GLWDDL), you can customize SGLWCFG(GLWBUILD) to build database for the GLW workload on your environment. The original authors documented the parameters very well in the SGLWSAMP(README).
+		
 		The original README file and SGLWEXEC(GLWRUN) are good source to understand all parameters and variables to customize the GLW workload.
 		You need to correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, DBASENME , and SQLID before submitting GLWBUILD job. You should see message "Database was successfully built" if there is no error.
 
@@ -94,7 +95,8 @@ Here are steps to install this workload onto your lpar:
 		
 		You need to customize SGLWCFG(GLWRUN) before trying to run the GLW workload. The correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, SQLID, STORPROC, and DBASENME are needed before running the workload.
 		
-		This workload supports Native stored procedures, C stored procedures, and Java stored procedures. However, you need to specify the same one you specified in GLWBUILD. 
+		This workload supports Native stored procedures, C stored procedures, and Java stored procedures. This workload uses Native stored procedures by default, and if
+		you want to use C stored procedure insterasd of Native stored procedure, you need to recompile all stored procedures in GLW.SGLWSRCC for your environment. 
 		
 		RUNTIME parameter specifies the duration of the run in minutes. After the workload finishes running, you should see the summary in the job log as sample below
 		
@@ -115,6 +117,32 @@ Here are steps to install this workload onto your lpar:
 				GLWSAMP.GLWTPNG                      0          0          0 
 				GLWSAMP.GLWTPRJ                   7500      33497      25997 
 				GLWSAMP.GLWTSFN                     84         84          0 
+				GLWSAMP.GLWTSPL                      0     318965     318965
+				GLWSAMP.GLWTSQL                      0          0          0
+				GLWSAMP.GLWTSTR                   1911       1911          0
+				GLWSAMP.GLWTTWN                     81         81          0
+				GLWSAMP.GLWTVRN                      1          1          0
+				
+			
+							GLWR270I: Stored Procedure call summary                            
+				DPTADD   ran  13297 times at an average elapsed of    0.001 seconds
+				DPTBAL   ran  13378 times at an average elapsed of    0.001 seconds
+				DPTDEL   ran   2678 times at an average elapsed of    0.001 seconds
+				DPTMGR   ran  13260 times at an average elapsed of    0.001 seconds
+				DPTUPD   ran  10415 times at an average elapsed of    0.001 seconds
+				DPTUPR   ran  13086 times at an average elapsed of    0.001 seconds
+				EMPADD   ran 133076 times at an average elapsed of    0.001 seconds
+				EMPADX   ran  53150 times at an average elapsed of    0.001 seconds
+				EMPDEL   ran   2707 times at an average elapsed of    0.001 seconds
+				EMPFND   ran   5269 times at an average elapsed of    0.009 seconds
+				EMPQR2   ran   8082 times at an average elapsed of    0.009 seconds
+				EMPUPD   ran   5187 times at an average elapsed of    0.001 seconds
+				EMPUPR   ran   5347 times at an average elapsed of    0.001 seconds
+				PRJADD   ran  26632 times at an average elapsed of    0.006 seconds
+				PRJUPD   ran  13400 times at an average elapsed of    0.001 seconds	
+
+		Total calls= 318964 ; Runtime=    10.0 Minutes        
+		Transaction rate=   531.6 trans/sec                   		
 		
 	
 	
