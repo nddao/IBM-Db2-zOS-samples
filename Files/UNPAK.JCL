@@ -36,6 +36,8 @@
   DSNAME('DEPTM60.GLW.SGLWSRCN')
   RECEIVE INDS('DEPTM60.SGLWTABD.XMIT')
   DSNAME('DEPTM60.GLW.SGLWTABD')
+  RECEIVE INDS('DEPTM60.SGLWCFG.XMIT')
+  DSNAME('DEPTM60.GLW.SGLWCFG')
 //*************************************************************
 //* DELETE AND DEFINE THE DB2 LOAD FILES
 //*************************************************************
