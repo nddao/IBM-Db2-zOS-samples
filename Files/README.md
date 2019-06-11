@@ -91,13 +91,13 @@ This folder contains datasets for the GLW workload. You need to define PDS datas
 	Library for the GLW workload.
 
 ### 9. SGLWSRCC
-	DDL to create stored procedures ( in C language )used by the GLW workload.
+	DDL to create stored procedures ( in C language )used by the GLW workload, and the source code of stored procedures in C language.
 
 ### 10. SGLWSRCN 
-	DDL to create stored procedures ( Native stored procedure ) used by the GLW workload.
+	DDL to create stored procedures ( Native stored procedure ) used by the GLW workload, and ther source code od stored procedures in Native SQLPL.
 
 ### 11. SGLWTABD
-	DDL to load some data into tables of the GLW workload.
+	DDL to load data into tables of the GLW workload.
 
 ### 12. .TRS files	
 	The .TRS files are data files  to be used to load into GLW tables.
