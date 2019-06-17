@@ -1,4 +1,4 @@
-//GLWDEFDS  JOB 87152,'GLW DEFINE DS',NOTIFY=USRT001,CLASS=A,             JOB09809
+//GLWDEFDS  JOB 87152,'GLW DEFINE DS',NOTIFY=USRT001,CLASS=A,
 //             MSGCLASS=A,MSGLEVEL=(1,1)
 //*************************************************************
 //* PROPERTY OF IBM
