@@ -12,6 +12,8 @@ Here are steps to install this workload onto your lpar:
 
 1. ### Clone or download all files onto your work station.
 
+It is better to clone this repository using Git because we found that if you download ZIP file and unzip the files, some unvisible characters were replaced in the JCLs, and make them getting error when submitting to zOS. 
+
 1. ### Get files onto your LPAR.
 
 	After cloning this repository or downloading files onto your work station, you need to customize the helper files in folder FILES before executing those helper batch scripts.
