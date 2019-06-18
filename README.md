@@ -12,7 +12,7 @@ Here are steps to install this workload onto your lpar:
 
 1. ### Clone or download all files onto your work station.
 
-It is better to clone this repository using Git because we found that if you download ZIP file and unzip the files, some invisible characters were replaced in the JCLs, and make them getting error when we submit the JCLs to zOS. 
+It is better to clone this repository using Git because we found that if you download ZIP file and unzip the files, some JCLs might get conversion during zip/unzip process and become unusable. 
 
 1. ### Get files onto your LPAR.
 
@@ -99,7 +99,7 @@ It is better to clone this repository using Git because we found that if you dow
 		You need to customize SGLWCFG(GLWRUN) before trying to run the GLW workload. The correct STEPLIB, SYSEXEC, GLWPARM, DB2SSID, SCHEMA, SQLID, STORPROC, and DBASENME are needed before running the workload.
 		
 		This workload supports Native stored procedures, C stored procedures, and Java stored procedures. This workload uses Native stored procedures by default, and if
-		you want to use C stored procedure insterasd of Native stored procedure, you need to recompile all stored procedures in GLW.SGLWSRCC for your environment. 
+		you want to use C stored procedure instead of Native stored procedure, you need to recompile all stored procedures in GLW.SGLWSRCC for your environment. 
 		
 		RUNTIME parameter specifies the duration of the run in minutes. After the workload finishes running, you should see the summary in the job log as sample below
 		
